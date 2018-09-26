@@ -6,7 +6,7 @@
 # pool:
 #  vmImage: 'Ubuntu 16.04'
 
-queue: 'default'
+queue: 'Default'
 
 steps:
 - script: echo Hello, world!
