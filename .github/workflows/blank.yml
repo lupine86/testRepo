@@ -8,14 +8,13 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: [ubuntu-latest, macos-latest]
+        operating-system: [macos, macos-latest]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Output Version
+      run: sw_vers
+    - name: Check jq
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-        curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-278.0.0-darwin-x86_64.tar.gz | tar xvz
+        jq --version
+      shell: bash
+    
