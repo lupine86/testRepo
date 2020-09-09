@@ -16,7 +16,7 @@ jobs:
         echo "::set-env name=sprint::$(( 172 + ($(date +%s) - $(date --date='20200613' +%s) )/(60*60*24)/21 -1 ))"
         echo "::set-env name=sprintweek::$(( (($(date +%s) - $(date --date="20200613" +%s) )/(60*60*24) % 21) / 7 +1 ))"        
     - uses: JasonEtco/create-an-issue@v2
-      if: env.sprintweek == 1
+      if: env.sprintweek == 2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
