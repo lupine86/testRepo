@@ -18,8 +18,6 @@ Someone just pushed, oh no! Here's who did it: {{ payload.sender.login }}.
 - payload: {{ payload }}
 - sprint: {{ env.sprint }}
 
-runner: {{ toJson(runner) }}
-
 **Note to approver: If this is upgrading Scale Units to a new sprint release, rotateSecrets should be set to true, otherwise set it to false to save time and increase reliability. You should also kick off both Preflight and mms-wcus-0 concurrrently to save time while doing hotfix deployment**
 
 Release: _ADO release url_
