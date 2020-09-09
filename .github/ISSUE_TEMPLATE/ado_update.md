@@ -1,7 +1,7 @@
 ---
 name: ADO Release Deployment
 about: Request/track the deployment of a release of MMS to Azure DevOps scale units
-title: 'ADO Deployment: M {{ env.sprint }}'
+title: 'ADO Deployment: M{{ env.sprint }}'
 labels: 'deployment'
 assignees: ''
 ---
