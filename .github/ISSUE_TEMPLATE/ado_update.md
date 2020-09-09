@@ -1,22 +1,10 @@
 ---
 name: ADO Release Deployment
 about: Request/track the deployment of a release of MMS to Azure DevOps scale units
-title: 'ADO Deployment: '
+title: 'ADO Deployment: M {{ env.sprint }}'
 labels: 'deployment'
 assignees: ''
 ---
-
-Someone just pushed, oh no! Here's who did it: {{ payload.sender.login }}.
-
-- Event: {{ event }}
-- Actor: {{ actor }}
-- Action: {{ tools.context.action }}
-- Action2: {{ action }}
-- Workflow: {{ workflow }}
-- Issue: {{ issue }}
-- repo: {{ repo }}
-- payload: {{ payload }}
-- sprint: {{ env.sprint }}
 
 **Note to approver: If this is upgrading Scale Units to a new sprint release, rotateSecrets should be set to true, otherwise set it to false to save time and increase reliability. You should also kick off both Preflight and mms-wcus-0 concurrrently to save time while doing hotfix deployment**
 
