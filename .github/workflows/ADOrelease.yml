@@ -1,7 +1,7 @@
 name: Create ADO release Issue
 
 on:
-  push
+  push:
   #schedule:
   #  - cron: '0 0 * * 1'
   # You can manually run this action w/:
