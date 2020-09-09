@@ -16,6 +16,7 @@ Someone just pushed, oh no! Here's who did it: {{ payload.sender.login }}.
 - Issue: {{ issue }}
 - repo: {{ repo }}
 - payload: {{ payload }}
+- sprint: {{ env.sprint }}
 
 runner: {{ toJson(runner) }}
 
