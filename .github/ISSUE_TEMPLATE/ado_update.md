@@ -8,6 +8,15 @@ assignees: ''
 
 Someone just pushed, oh no! Here's who did it: {{ payload.sender.login }}.
 
+Event: {{ event }}
+Actor: {{ actor }}
+Action: {{ tools.context.action }}
+Action2: {{ action }}
+Workflow: {{ workflow }}
+Issue: {{ issue }}
+repo: {{ repo }}
+payload: {{ payload }}
+
 **Note to approver: If this is upgrading Scale Units to a new sprint release, rotateSecrets should be set to true, otherwise set it to false to save time and increase reliability. You should also kick off both Preflight and mms-wcus-0 concurrrently to save time while doing hotfix deployment**
 
 Release: _ADO release url_
