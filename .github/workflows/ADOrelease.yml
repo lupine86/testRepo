@@ -1,24 +1,20 @@
 name: Create ADO release Issue
 
 on:
-  push:
-  #schedule:
-  #  - cron: '0 0 * * 1'
-  # You can manually run this action w/:
-  # curl -i -H 'Authorization: token <insert PAT token>' --request POST --data '{"event_type": "adorelease"}' https://api.github.com/repos/github/c2c-actions-compute-sre/dispatches
-  repository_dispatch:
-    types: adorelease
-
+  schedule:
+    - cron: '0 12 * * 1'
 jobs:
   create-issue:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set current Sprint
       id: sprint
-      run: echo "::set-env name=sprint::$(( 172 + ($(date +%s) - $(date --date='20200613' +%s) )/(60*60*24)/21 -1 ))"
+      run: |
+        echo "::set-env name=sprint::$(( 172 + ($(date +%s) - $(date --date='20200613' +%s) )/(60*60*24)/21 -1 ))"
+        echo "::set-env name=sprintweek::$(( (($(date +%s) - $(date --date="20200613" +%s) )/(60*60*24) % 21) / 7 +1 ))"        
     - uses: JasonEtco/create-an-issue@v2
+      if: env.sprintweek == 1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
