@@ -11,7 +11,7 @@ jobs:
         operating-system: [macos, macos-latest]
 
     steps:
-    - name: Output Version
+    - name: Output Version - really long name should cause the checkmark to wrap - really long name should cause the checkmark to wrap (typed twice to be sure it was long enough!)
       run: sw_vers
     - name: Check jq
       run: |
