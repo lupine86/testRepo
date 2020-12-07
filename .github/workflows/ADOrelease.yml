@@ -1,9 +1,9 @@
 name: Create ADO release Issue
 
-on:
+on: workflow_dispatch
   #schedule:
   #  - cron: '0 12 * * 1'
-  push:
+  #push:
       
 jobs:
   create-issue:
