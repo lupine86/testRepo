@@ -1,1 +1,27 @@
 
+name: Hello_2
+
+on: 
+  workflow_dispatch:
+  pull_request:
+    branches: 
+      - main
+jobs:
+  build:
+    # This should require a manual approval
+    # environment can be a string
+    #environment: staging
+    # environment can be an object
+    environment:
+      name: Production
+      # To parse this correctly u need https://github.com/actions/runner/pull/762/files
+      #...and https://dev.azure.com/mseng/AzureDevOps/_git/AzDevNext/pullrequest/580706
+      url: '${{ steps.env-url-step.outputs.url }}'
+    runs-on: self-hosted
+    steps:
+        - name: hello world
+          run: |
+            echo hello world
+        - id: env-url-step
+          name: set environment URL data
+          run: echo "::set-output name=url::https://www.github.com"
