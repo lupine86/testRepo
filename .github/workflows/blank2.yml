@@ -32,6 +32,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-         echo [30;42m                                                                                [39;49m
-         echo [30;42m [OK] All 53 Twig files contain valid syntax.                                   [39;49m
-         echo [30;42m                                                                                [39;49m
+         echo "\e[30;42m                                                                                \e[39;49m"
+         echo "\e[30;42m [OK] All 53 Twig files contain valid syntax.                                   \e[39;49m"
+         echo "\e[30;42m                                                                                \e[39;49m"
